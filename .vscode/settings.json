@@ -1,0 +1,15 @@
+{
+  "php.validate.executablePath": "G:/php/php.exe",
+  "php.debug.executablePath": "G:/php/phpdbg.exe",
+  "remotefs.remote": {
+    "сайт": {
+        "scheme": "ftp",
+        "host": "92.53.96.200",
+        "port": 21,
+        "username": "ch53016",
+        "password": "oZ7rsi3Zxta4",
+        "rootPath": "/",
+        "connectTimeout": 10000
+    }
+  }
+}
