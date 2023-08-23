@@ -16,8 +16,6 @@ form.addEventListener('submit', function(event) {
   .then(response => {
     if (response.ok) {
       form.reset(); // Очищаем поля формы
-      h1.style.cssText = 'text-alighn: center; vertical-alighn: middle;';
-      h1.setAttribute('style', 'text-alighn: center; vertical-alighn: middle;');
     }
   })
   .catch(error => {
