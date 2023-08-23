@@ -1,49 +1,26 @@
-const form = document.querySelector('form'),
-      inputs = document.querySelectorAll('input'),
-      phoneInput = document.querySelector('input[name="phone"]');
+const form = document.getElementById('form');
+const msg = document.getElementById('message');
 
+// Обработчик события отправки формы
+form.addEventListener('submit', function(event) {
+  event.preventDefault(); // Отменяем стандартное поведение отправки формы
 
-  const message = {
-    loading: 'Загрузка...',
-    success: 'Спасибо, я с Вами свяжусь',
-    failure: 'Извините, что-то пошло не так...'
-  };
+  // Получаем данные формы
+  const formData = new FormData(this);
 
-  const formData = async (url, data) => {
-    document.querySelector('.status').textContent = message.loading;
-    let res = await fetch(url, {
-        method: "POST",
-        body: data
-    });
-
-    return await res.text();
-  };
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-
-    let statusMessage = document.createElement('div');
-            statusMessage.classList.add('status');
-            form.appendChild(statusMessage);
-
-    const formData = new FormData(form);
-
-    sendData('../send_mail.php', formData)
-    .then(res => {
-      console.log(res);
-      statusMessage.textContent = message.success;
-    })
-    .catch(() => statusMessage.textContent = message.failure)
-    .finally(() => {
-      clearInputs();
-      setTimeout(() => {
-          statusMessage.remove();
-      }, 5000);
-    });
-
-  const clearInputs = () => {
-    inputs.forEach(item => {
-        item.value = '';
-    });
-  };
-})
+  // Отправляем данные формы на сервер с использованием функции fetch()
+  fetch('/send_mail.php', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    if (response.ok) {
+      form.reset(); // Очищаем поля формы
+      h1.style.cssText = 'text-alighn: center; vertical-alighn: middle;';
+      h1.setAttribute('style', 'text-alighn: center; vertical-alighn: middle;');
+    }
+  })
+  .catch(error => {
+    console.error('Ошибка:', error);
+  });
+});

@@ -115,7 +115,7 @@ img {
   color: #5769cf;
 }
 
-.form {
+.header__nav-form {
   width: 300px;
   height: 40px;
   display: flex;
@@ -733,6 +733,13 @@ img {
 .order__form-btn:hover {
   background-color: #e33232;
   transform: scale(.9, .9);
+}
+
+#message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* footer */

@@ -1,24 +1,22 @@
 <?php
-  $name = $_POST['name'];
-  $email = trim($_POST['email']);
-  $phone = $_POST['phone'];
+// Получение данных из POST-запроса
+$name = $_POST['name'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
 
-  $to = "gorshunov65@inbox.ru"; 
-  $from = $email;
-  $subject = "Заявка c сайта";
+// Формирование письма
+$to = 'gorshunov65@inbox.ru';
+$subject = 'Новый заказ с сайта';
+$body = "Имя: $name\nEmail: $email\nТелефон: $phone";
 
-  $msg="
-    Имя: $name /n
-    Почта: $email /n
-    Телефон: $phone /n";
-    
-  $headers = "From: $from" . "/r/n" .
-  "Replay-to: $from" . "/r/n" . 
-  "X-Mailer: PHP/" . phpversion();  
-  
-  if(mail($to, $subject, $msg, $headers)) {
-    echo 'Данные отправлены';
-  } else {
-    echo 'Возникла ошибка';
-  }
+// Отправка письма функцией mail
+if (mail($to, $subject, $body)) {
+  $response = array('success' => true);
+} else {
+  $response = array('success' => false);
+}
+
+// Возвращаем результат обратно в JavaScript-ко
+$message = 'Спасибо за заказ, я Вам перезвоню';
+echo '<h1>' . $message . '</h1>';
 ?>
