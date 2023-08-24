@@ -18,7 +18,8 @@ if (mail($to, $subject, $body)) {
 
 // Возвращаем результат обратно в JavaScript-ко
 $message = 'Спасибо за заказ, я Вам перезвоню!';
-echo '<h1 style="width: 100%; 
+echo '<h1 style="width: 100%;
+font-family: sans-serif; 
 position: fixed;
 top: 50%;
 left: 50%;
