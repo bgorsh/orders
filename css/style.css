@@ -800,59 +800,6 @@ img {
   transition: color .5s ease-in-out;
 }
 
-.footer__social-wrap {
-  display: flex;
-  justify-content: space-between;
-  width: 5%;
-  height: 35px;
-  transform: translateY(-6px);
-}
-
-.soc-icon {
-  width: 60px;
-  height: 60px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  transition-property: fill, transform;
-  transition-duration: .3s;
-  transition-timing-function: ease-in-out;
-}
-
-.soc-icon:hover {
-  cursor: pointer;
-  transform: scale(.9, .9);
-}
-
-.footer__wk-icon .cls-1 {
-  width: 40px;
-  height: 40px;
-  fill: #07f;
-}
-
-.footer__wk-icon:hover .cls-1 {
-  fill: #32a4d2;
-}
-
-.footer__ok-icon .cls-1  {
-  width: 215px;
-  height: 215px;
-  transform: translateY(-2px);
-}
-
-.footer__ok-icon:hover .cls-1 {
-  fill: #edb16c
-
-}
-
-.footer__ok-icon:hover svg path .cls-2 {
-  fill: #fff;
-}
-
-.footer__social-link:not(:last-child) {
-  margin-right: 10px;
-}
-
 @media (max-width: 1700px) {
   .container {
     max-width: 1600px;
